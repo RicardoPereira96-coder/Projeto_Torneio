@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36518.9 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinForm", "WinForm\WinForm.csproj", "{3712FEE4-0267-44C2-9F30-C56B376F41EB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackerLibrary", "TrackerLibrary\TrackerLibrary.csproj", "{9794F209-4894-476D-A6DC-11246CE6A9EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projeto_Torneio_UI", "Projeto_Torneio_UI\Projeto_Torneio_UI.csproj", "{4DF0073E-8772-4994-BD30-365DD73F2225}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3712FEE4-0267-44C2-9F30-C56B376F41EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3712FEE4-0267-44C2-9F30-C56B376F41EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3712FEE4-0267-44C2-9F30-C56B376F41EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3712FEE4-0267-44C2-9F30-C56B376F41EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9794F209-4894-476D-A6DC-11246CE6A9EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9794F209-4894-476D-A6DC-11246CE6A9EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9794F209-4894-476D-A6DC-11246CE6A9EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9794F209-4894-476D-A6DC-11246CE6A9EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DF0073E-8772-4994-BD30-365DD73F2225}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DF0073E-8772-4994-BD30-365DD73F2225}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DF0073E-8772-4994-BD30-365DD73F2225}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DF0073E-8772-4994-BD30-365DD73F2225}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
