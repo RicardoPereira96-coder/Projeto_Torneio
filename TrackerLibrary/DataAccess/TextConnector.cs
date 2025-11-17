@@ -6,13 +6,18 @@ using System.Threading.Tasks;
 
 namespace TrackerLibrary
 {
-    public class TextConnection : IDataConnection
+    public class TextConnector : IDataConnection
     {
         // TODO - Wire up the CreatePrize for text files.
         public PrizeModel CreatePrize(PrizeModel model)
         {
             model.Id = 1;
             return model;
+        }
+
+        public static implicit operator List<object>(TextConnector v)
+        {
+            throw new NotImplementedException();
         }
     }
 }

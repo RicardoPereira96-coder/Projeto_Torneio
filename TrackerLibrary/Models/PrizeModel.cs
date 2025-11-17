@@ -26,7 +26,7 @@ namespace TrackerLibrary
             int.TryParse(placeNumber, out placeNumberValue);
             PlaceNumber = placeNumberValue;
             decimal prizeAmountValue = 0;
-            decimal.TryParse(prizePercentage, out prizeAmountValue);
+            decimal.TryParse(prizeAmount, out prizeAmountValue);
             PrizeAmount = prizeAmountValue;
             double prizePercentageValue = 0;
             double.TryParse(prizePercentage, out prizePercentageValue);
