@@ -15,7 +15,7 @@ namespace Projeto_Torneio_UI
             ApplicationConfiguration.Initialize();
 
             // Initialize the database connections
-            TrackerLibrary.GlobalConfig.InitializeConnections(DataBaseType.Sql);
+            TrackerLibrary.GlobalConfig.InitializeConnections(DataBaseType.TextFile);
             Application.Run(new CreatePrizeForm());
             //Application.Run(new TournamentDashboardForm());
         }
