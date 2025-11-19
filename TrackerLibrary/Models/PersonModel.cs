@@ -11,6 +11,7 @@ namespace TrackerLibrary
     /// </summary>
     public class PersonModel
     {
+        public int Id { get; set; }
         /// <summary>
         /// O primeiro noma da pessoa
         /// </summary>
