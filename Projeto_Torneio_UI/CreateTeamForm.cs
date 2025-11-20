@@ -17,11 +17,13 @@ namespace Projeto_Torneio_UI
     {
         private List<PersonModel> availableTeamMembers = GlobalConfig.Connection.GetPerson_All();
         private List<PersonModel> selectedTeamMembers = new List<PersonModel>();
-        public CreateTeamForm()
+        private ITeamRequester callingForm;
+        public CreateTeamForm(ITeamRequester caller)
         {
             InitializeComponent();
             CreateSampleData();
             WireUpLists();
+            callingForm = caller;
         }
 
         private void CreateSampleData()
@@ -130,7 +132,9 @@ namespace Projeto_Torneio_UI
             t.TeamName = teamNameValue.Text;
             t.TeamMembers = selectedTeamMembers;
             GlobalConfig.Connection.CreateTeam(t);
-            //this.Close();
+
+            callingForm.TeamComplete(t);
+            this.Close();
         }
     }
 }

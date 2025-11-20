@@ -124,6 +124,7 @@
             createNewTeamLink.TabIndex = 15;
             createNewTeamLink.TabStop = true;
             createNewTeamLink.Text = "create new";
+            createNewTeamLink.LinkClicked += createNewTeamLink_LinkClicked;
             // 
             // addTeamButton
             // 
@@ -155,6 +156,7 @@
             createPrizeButton.TabIndex = 17;
             createPrizeButton.Text = "Create Prize";
             createPrizeButton.UseVisualStyleBackColor = true;
+            createPrizeButton.Click += createPrizeButton_Click;
             // 
             // TournamentPlayerListBox
             // 
@@ -191,6 +193,7 @@
             deleteSelectedPlayerButton.TabIndex = 20;
             deleteSelectedPlayerButton.Text = "Delete Selected";
             deleteSelectedPlayerButton.UseVisualStyleBackColor = true;
+            deleteSelectedPlayerButton.Click += deleteSelectedPlayerButton_Click;
             // 
             // deleteSelectecPrizeButton
             // 
@@ -206,6 +209,7 @@
             deleteSelectecPrizeButton.TabIndex = 23;
             deleteSelectecPrizeButton.Text = "Delete Selected";
             deleteSelectecPrizeButton.UseVisualStyleBackColor = true;
+            deleteSelectecPrizeButton.Click += deleteSelectecPrizeButton_Click;
             // 
             // prizesLabel
             // 
@@ -242,6 +246,7 @@
             createTournamentButton.TabIndex = 24;
             createTournamentButton.Text = "Create Tournament";
             createTournamentButton.UseVisualStyleBackColor = true;
+            createTournamentButton.Click += createTournamentButton_Click;
             // 
             // CreateTournamentForm
             // 
