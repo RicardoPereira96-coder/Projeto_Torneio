@@ -11,6 +11,7 @@ namespace TrackerLibrary
     /// </summary>
     public class MatchupModel
     {
+        public int Id { get; set; }
         /// <summary>
         /// O conjunto de equipas que estava envolvido no jogo
         /// </summary>

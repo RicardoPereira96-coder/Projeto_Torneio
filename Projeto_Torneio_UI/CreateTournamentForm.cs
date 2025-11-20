@@ -116,6 +116,32 @@ namespace Projeto_Torneio_UI
 
         private void createTournamentButton_Click(object sender, EventArgs e)
         {
+            decimal fee = 0;
+            bool feeAcceptable = decimal.TryParse(entryFeeValue.Text, out fee);
+            if (!feeAcceptable)
+            {
+                MessageBox.Show("You need to enter a valid Entry Fee.", "Invalid Fee",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Create Tournament model
+            TournamentModel tm = new TournamentModel();
+            tm.TournamentName = tournamentNameValue.Text;
+            tm.Pries = selectedPrizes;
+            tm.EnteredTeams = selectedTeams;
+            // Create matchups
+
+            // Validate data
+            // Create Tournament entry
+            // Create all of the prizes entries
+            // Create all of the team entries
+            GlobalConfig.Connection.CreateTournament(tm);
+            // Alert users to the new tournament
+            // Open tournament viewer form
+            // Close this form
+
+
 
         }
     }
