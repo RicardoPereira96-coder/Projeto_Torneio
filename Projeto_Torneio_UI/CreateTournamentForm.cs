@@ -128,10 +128,11 @@ namespace Projeto_Torneio_UI
             // Create Tournament model
             TournamentModel tm = new TournamentModel();
             tm.TournamentName = tournamentNameValue.Text;
+            tm.EntryFee = fee;
             tm.Pries = selectedPrizes;
             tm.EnteredTeams = selectedTeams;
             // Create matchups
-
+            TournamentLogic.CreateRounds(tm);
             // Validate data
             // Create Tournament entry
             // Create all of the prizes entries
