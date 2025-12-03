@@ -100,5 +100,10 @@ namespace TrackerLibrary.DataAccess
 
 
         }
+
+        public List<TournamentModel> GetTournament_All()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
