@@ -19,6 +19,8 @@ namespace TrackerLibrary
         /// <summary>
         /// O vencedor da partida
         /// </summary>
+        
+        public int WinnerId { get; set; }
         public TeamModel Winner { get; set; }
 
         /// <summary>

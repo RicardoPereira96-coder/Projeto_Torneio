@@ -15,12 +15,16 @@ namespace TrackerLibrary
         /// <summary>
         /// Representa uma equipa no matchup
         /// </summary>
+
+        public int TeamCompetingId { get; set; }
         public TeamModel TeamCompeting { get; set; }
 
         /// <summary>
         /// Representa o resultado desta equipa em particular
         /// </summary>
         public double Score { get; set; }
+
+        public int ParentMatchupId { get; set; }
 
         /// <summary>
         /// Representa o resultado que a equipa teve em relaçao ao vencedor
