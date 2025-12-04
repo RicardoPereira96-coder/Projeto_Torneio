@@ -12,7 +12,7 @@ namespace TrackerLibrary
     public class SqlConnector : IDataConnection
     {
         private const string db = "Tournaments";
-        public PersonModel CreatePerson(PersonModel model)
+        public void CreatePerson(PersonModel model)
         {
             using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
             {
@@ -27,11 +27,10 @@ namespace TrackerLibrary
 
                 model.Id = p.Get<int>("@id");
 
-                return model;
             }
         }
 
-        public PrizeModel CreatePrize(PrizeModel model)
+        public void CreatePrize(PrizeModel model)
         {
             using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
             {
@@ -46,11 +45,10 @@ namespace TrackerLibrary
 
                 model.Id = p.Get<int>("@id");
 
-                return model;
             }
         }
 
-        public TeamModel CreateTeam(TeamModel model)
+        public void CreateTeam(TeamModel model)
         {
             using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString("Tournaments")))
             {
@@ -66,7 +64,7 @@ namespace TrackerLibrary
                     tmParams.Add("PersonId", tm.Id);
                     connection.Execute("dbo.spTeamMembers_Insert", tmParams, commandType: CommandType.StoredProcedure);
                 }
-                return model;
+
             }
         }
 
@@ -78,6 +76,7 @@ namespace TrackerLibrary
                 SaveTournamentPrizes(connection, model);
                 SaveTournamentEntries(connection, model);
                 SaveTournamentRounds(connection, model);
+                TournamentLogic.updateTournamentResults(model);
             }
   
         }
@@ -276,16 +275,17 @@ namespace TrackerLibrary
                 }
 
                 // update each of the entries
-                foreach (MatchupEntryModel me in model.Entries)
+                foreach (MatchupEntryModel mu in model.Entries)
                 {
-                    if (me.TeamCompeting == null)
+                    if (mu.TeamCompeting != null)
                     {
-                        p = new DynamicParameters();
-                        p.Add("@id", me.Id);
-                        p.Add("@TeamCompetingId", me.TeamCompeting.Id);
-                        p.Add("@Score", me.Score);
 
-                        connection.Execute("dbo.spMatchupEntries_Update", p, commandType: CommandType.StoredProcedure);
+                        p = new();
+                        p.Add("@id", mu.Id);
+                        p.Add("@TeamCompetingId", mu.TeamCompeting.Id);
+                        p.Add("@Score", mu.Score);
+
+                        connection.Execute("spMatchupEntries_Update", p, commandType: CommandType.StoredProcedure);
                     }
                 }
             }

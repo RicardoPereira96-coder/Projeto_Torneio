@@ -141,8 +141,10 @@ namespace Projeto_Torneio_UI
             // Alert users to the new tournament
             // Open tournament viewer form
             // Close this form
-
-
+            
+            TournamentViewerForm frm = new TournamentViewerForm(tm);
+            frm.Show();
+            this.Close();
 
         }
     }

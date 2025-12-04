@@ -229,6 +229,7 @@
             teamMembersListBox.Name = "teamMembersListBox";
             teamMembersListBox.Size = new Size(348, 514);
             teamMembersListBox.TabIndex = 21;
+            teamMembersListBox.SelectedIndexChanged += teamMembersListBox_SelectedIndexChanged;
             // 
             // removeSelectecMemberButton
             // 

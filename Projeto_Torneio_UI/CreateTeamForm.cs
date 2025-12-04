@@ -136,5 +136,10 @@ namespace Projeto_Torneio_UI
             callingForm.TeamComplete(t);
             this.Close();
         }
+
+        private void teamMembersListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

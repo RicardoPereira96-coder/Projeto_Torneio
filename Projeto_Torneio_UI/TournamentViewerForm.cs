@@ -204,42 +204,10 @@ namespace Projeto_Torneio_UI
                    
                 }
             }
-            if (teamOneScore > teamTwoScore)
-            {
-                m.Winner = m.Entries[0].TeamCompeting;
-            }
-            else if (teamTwoScore > teamOneScore)
-            {
-                m.Winner = m.Entries[1].TeamCompeting;
-            }
-            else
-            {
-                MessageBox.Show("Ties are not allowed.");
-                return;
-            }
-
-            foreach (List<MatchupModel> matchups in tournament.Rounds)
-            {
-                foreach (MatchupModel rm in matchups)
-                {
-                    foreach (MatchupEntryModel me in rm.Entries)
-                    {
-                        if (me.ParentMatchup != null)
-                        {
-                            if (me.ParentMatchup.Id != m.Id)
-                            {
-                                me.TeamCompeting = m.Winner;
-                                GlobalConfig.Connection.UpdateMatchup(rm);
-                            }
-                        }
-                    }
-                }
-            }
-
+            
+            TournamentLogic.updateTournamentResults(tournament);
             LoadMatchups((int)roundDropDown.SelectedItem);
 
-
-            GlobalConfig.Connection.UpdateMatchup(m);
         }
         
     }
