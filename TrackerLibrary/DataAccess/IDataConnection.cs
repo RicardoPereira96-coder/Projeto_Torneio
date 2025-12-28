@@ -16,6 +16,7 @@ namespace TrackerLibrary
         void CreatePrize(PrizeModel model);
         void CreatePerson(PersonModel model);
         void CreateTeam(TeamModel model);
+        void CompleteTournament(TournamentModel model);
 
     }
 }
